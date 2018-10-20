@@ -1,0 +1,29 @@
+﻿{
+    "type": "crafting_shaped",
+    "pattern": [
+        " # ",
+        "PGP",
+        "DHD"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:redstone_block"
+        },
+        "P": {
+            "item": "minecraft:piston"
+        },
+        "G": {
+            "item": "minecraft:glass_pane"
+        },
+        "D": {
+            "item": "minecraft:dispenser"
+        },
+        "H": {
+            "item": "minecraft:hopper"
+        }
+    },
+    "result": {
+        "item": "minecraft:structure_void",
+        "count": 1
+    }
+}
