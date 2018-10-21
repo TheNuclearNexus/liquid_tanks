@@ -1,6 +1,6 @@
 #Particles
 execute at @s if entity @s[scores={ES_ID=1}] run particle dripping_water ~ ~1.1 ~ 0.1 0 0.1 0.1 3 normal @a[distance=..5]
-execute at @s if entity @s[tag=hasLava] run particle lava ~ ~1.1 ~ 0.1 0 0.1 0.1 1 normal @a[distance=..5]
+execute at @s if entity @s[scores={ES_ID=3}] run particle lava ~ ~1.1 ~ 0.1 0 0.1 0.1 1 normal @a[distance=..5]
 execute at @s if entity @s[tag=hasMilk] run particle block white_concrete ~ ~1.1 ~ 0 0 0 0.1 3 normal @a[distance=..5]
 execute at @s if entity @s[tag=hasXP] run particle block lime_glazed_terracotta ~ ~1.1 ~ 0 0 0 0.1 3 normal @a[distance=..5]
 execute at @s if entity @s[tag=hasLev] run particle end_rod ~ ~1.1 ~ 0 0 0 0.1 3 normal @a[distance=..5]

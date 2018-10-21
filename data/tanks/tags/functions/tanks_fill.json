@@ -1,6 +1,7 @@
 {
    "values":[
        "tanks:filling/water",
-       "tanks:filling/dragon_breath"
+       "tanks:filling/dragon_breath",
+       "tanks:filling/lava"
    ]
 }
