@@ -6,3 +6,4 @@ scoreboard objectives add ES_useCOAS minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add ES_placeHop minecraft.used:minecraft.hopper
 scoreboard objectives add ES_ID dummy
 scoreboard objectives add ES_useHop minecraft.custom:minecraft.inspect_hopper
+scoreboard objectives add ES_placeHead minecraft.used:minecraft.player_head

@@ -28,3 +28,5 @@ execute as @a[scores={ES_temp=1..}] run function tanks:placing/liquid_tank
 
 execute as @a if score @s ES_temp matches 1.. run scoreboard players remove @s ES_temp 1
 execute as @a if score @s ES_temp matches 0 run scoreboard players reset @s ES_temp
+
+execute as @a[scores={ES_placeHead=1..}] at @s run function tanks:placing/place_head
