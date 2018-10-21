@@ -1,10 +1,5 @@
 {
    "values":[
-       "tanks:names/water",
-       "tanks:names/lava",
-       "tanks:names/dragon_breath",
-       "tanks:names/milk",
-       "tanks:names/levitation",
-       "tanks:names/xp"
+       "tanks:names/water"
    ]
 }

@@ -1,7 +1,10 @@
+execute as @s at @s run function #tanks:tanks_tick
 
-execute at @s[tag=!hasXP,tag=!hasWater,tag=!hasDraBre] run data merge block ~ ~ ~ {CustomName: "{\"italic\":false,\"color\":\"aqua\",\"text\":\"Liquid Tank\"}", Items: [{Slot: 0b, id: "minecraft:light_gray_stained_glass_pane", Count: 1b, tag: {display: {Name: "{\"text\":\"\"}"}, gui: 1b}}, {Slot: 1b, id: "minecraft:light_gray_stained_glass_pane", Count: 1b, tag: {display: {Name: "{\"text\":\"\"}"}, gui: 1b}}, {Slot: 2b, id: "minecraft:light_gray_stained_glass_pane", Count: 1b, tag: {display: {Name: "{\"text\":\"\"}"}, gui: 1b}}, {Slot: 3b, id: "minecraft:light_gray_stained_glass_pane", Count: 1b, tag: {display: {Name: "{\"text\":\"\"}"}, gui: 1b}}, {Slot: 4b, id: "minecraft:light_gray_stained_glass_pane", Count: 1b, tag: {display: {Name: "{\"text\":\"\"}"}, gui: 1b}}], id: "minecraft:hopper", Lock: ""}
+execute at @s[scores={ES_ID=0}] run data merge block ~ ~ ~ {CustomName: "{\"italic\":false,\"color\":\"aqua\",\"text\":\"Liquid Tank\"}", Items: [{Slot: 0b, id: "minecraft:light_gray_stained_glass_pane", Count: 1b, tag: {display: {Name: "{\"text\":\"\"}"}, gui: 1b}}, {Slot: 1b, id: "minecraft:light_gray_stained_glass_pane", Count: 1b, tag: {display: {Name: "{\"text\":\"\"}"}, gui: 1b}}, {Slot: 2b, id: "minecraft:light_gray_stained_glass_pane", Count: 1b, tag: {display: {Name: "{\"text\":\"\"}"}, gui: 1b}}, {Slot: 3b, id: "minecraft:light_gray_stained_glass_pane", Count: 1b, tag: {display: {Name: "{\"text\":\"\"}"}, gui: 1b}}, {Slot: 4b, id: "minecraft:light_gray_stained_glass_pane", Count: 1b, tag: {display: {Name: "{\"text\":\"\"}"}, gui: 1b}}], id: "minecraft:hopper", Lock: ""}
 
 data merge entity @s {Fire:100s}
+
+execute unless score @s ES_ID matches 1.. run scoreboard players set @s ES_ID 0
 execute at @s run data merge block ~ ~ ~ {TransferCooldown:999999}
 execute at @s if entity @s[tag=hasXP] if block ~ ~ ~ air run summon experience_orb ~ ~1 ~ {Tags:["return"],Health:10b}
 execute at @s if entity @s[tag=hasXP] if block ~ ~ ~ air store result entity @e[type=experience_orb,sort=nearest,limit=1] Value short 1 run scoreboard players get @s ES_stored
@@ -30,9 +33,9 @@ execute if score @s ES_stored matches ..0 run scoreboard players reset @s ES_tem
 execute as @s at @s run function #tanks:tanks_fill
 
 #Naming
-execute at @s if entity @s[tag=!filled] if entity @a[distance=..10] positioned ~ ~.4 ~ unless entity @e[type=area_effect_cloud,distance=..0.3] run summon area_effect_cloud ~ ~ ~ {CustomNameVisible:1b,Particle:"block",Radius:0f,Duration:99,CustomName:"{\"text\":\"Empty\",\"color\":\"white\"}"}
-execute as @s at @s run function #tanks:tanks_names
-#execute at @s if entity @s[tag=hasWater] if entity @a[distance=..10] positioned ~ ~.4 ~ unless entity @e[type=area_effect_cloud,distance=..0.3] run summon area_effect_cloud ~ ~ ~ {CustomNameVisible:1b,Particle:"block",Radius:0f,Duration:99,CustomName:"{\"text\":\"Water\",\"color\":\"blue\"}"}
+execute at @s if entity @s[scores={ES_ID=0}] if entity @a[distance=..10] positioned ~ ~.4 ~ unless entity @e[type=area_effect_cloud,distance=..0.3] run summon area_effect_cloud ~ ~ ~ {CustomNameVisible:1b,Particle:"block",Radius:0f,Duration:99,CustomName:"{\"text\":\"Empty\",\"color\":\"white\"}"}
+execute as @s at @s if entity @a[distance=..10] positioned ~ ~.4 ~ unless entity @e[type=area_effect_cloud,distance=..0.3] run function #tanks:tanks_names
+#execute at @s if entity @s[scores={ES_ID=1}] if entity @a[distance=..10] positioned ~ ~.4 ~ unless entity @e[type=area_effect_cloud,distance=..0.3] run summon area_effect_cloud ~ ~ ~ {CustomNameVisible:1b,Particle:"block",Radius:0f,Duration:99,CustomName:"{\"text\":\"Water\",\"color\":\"blue\"}"}
 #execute at @s if entity @s[tag=hasLava] if entity @a[distance=..10] positioned ~ ~.4 ~ unless entity @e[type=area_effect_cloud,distance=..0.3] run summon area_effect_cloud ~ ~ ~ {CustomNameVisible:1b,Particle:"block",Radius:0f,Duration:99,CustomName:"{\"text\":\"Lava\",\"color\":\"gold\"}"}
 #execute at @s if entity @s[tag=hasMilk] if entity @a[distance=..10] positioned ~ ~.4 ~ unless entity @e[type=area_effect_cloud,distance=..0.3] run summon area_effect_cloud ~ ~ ~ {CustomNameVisible:1b,Particle:"block",Radius:0f,Duration:99,CustomName:"{\"text\":\"Milk\",\"color\":\"gray\"}"}
 #execute at @s if entity @s[tag=hasDraBre] if entity @a[distance=..10] positioned ~ ~.4 ~ unless entity @e[type=area_effect_cloud,distance=..0.3] run summon area_effect_cloud ~ ~ ~ {CustomNameVisible:1b,Particle:"block",Radius:0f,Duration:99,CustomName:"{\"text\":\"Dragon's Breath\",\"color\":\"light_purple\"}"}
@@ -41,7 +44,7 @@ execute as @s at @s run function #tanks:tanks_names
 
 #Head Change
 execute as @s[tag=!filled] run data merge entity @s {ArmorItems:[{},{},{},{id:"minecraft:glass",Count:1b}]}
-execute as @s[tag=hasWater] run data merge entity @s {ArmorItems:[{},{},{},{id:"minecraft:player_head",Count:1b,tag:{SkullOwner:{Id:"7e60051d-c8a7-40ef-bbce-82015992cdee",Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzI2NjY2ODFkMzk0MzI1YzJkMWMwN2E0ZDJkZTRmZjEwZWMxODkwZmI1MGNhYTMzZmEyOWNjODc1ZWMxZDhlIn19fQ=="}]}}}}]}
+execute as @s at @s run function #tanks:tanks_heads
 execute as @s[tag=hasLava] run data merge entity @s {ArmorItems:[{},{},{},{id:"minecraft:player_head",Count:1b,tag:{SkullOwner:{Id:"3a6df1ec-1eaa-4006-9954-b3ae78e3f510",Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmVjYTg3ODA5Y2E2MWI4YWE4ZGY4ZGM3YTM3MGFjMDEwMTFiMzA3YWE2YzY5NDkyNjU3ZGJmMGUwZGZlNzFiMyJ9fX0="}]}}}}]}
 execute as @s[tag=hasMilk] run data merge entity @s {ArmorItems:[{},{},{},{id:"minecraft:player_head",Count:1b,tag:{SkullOwner:{Id:"f89da645-d752-4b67-a377-a7deb698e615",Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjM5ZTkzZTZmOTQwYjY1ZTI2MjM1ZGFhZDQ0NTVhYmQ1OTg5NThiZDQ1NmUwMWVjZDQxMmFkNzdlZWNiZjIxYyJ9fX0="}]}}}}]}
 execute as @s[tag=hasDraBre] run data merge entity @s {ArmorItems:[{},{},{},{id:"minecraft:player_head",Count:1b,tag:{SkullOwner:{Id:"383a7e5b-2b14-4734-afe5-ce64011748e9",Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzY2MmJhMGE2YzY1ZmRjMTViYWI0MDk4YmIxYjg3MjVlNDM0MTcyNmQwZTkwY2NiNTNmN2RhOTI2MGYwYTk3MiJ9fX0="}]}}}}]}
