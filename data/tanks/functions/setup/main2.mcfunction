@@ -27,21 +27,17 @@ execute if score @s ES_stored matches ..0 run tag @s remove hasLev
 execute if score @s ES_stored matches ..0 run scoreboard players reset @s ES_temp
 
 #functions
-execute at @s unless entity @s[tag=filled,tag=!hasWater] run function tanks:filling/water
-execute at @s unless entity @s[tag=filled,tag=!hasLava] run function tanks:filling/lava
-execute at @s unless entity @s[tag=filled,tag=!hasMilk] run function tanks:filling/milk
-execute at @s unless entity @s[tag=filled,tag=!hasDraBre] run function tanks:filling/dragon_breath
-execute at @s unless entity @s[tag=filled,tag=!hasXP] run function tanks:filling/xp
-execute at @s unless entity @s[tag=filled,tag=!hasLev] run function tanks:filling/levitation
+execute as @s at @s run function #tanks:tanks_fill
 
 #Naming
 execute at @s if entity @s[tag=!filled] if entity @a[distance=..10] positioned ~ ~.4 ~ unless entity @e[type=area_effect_cloud,distance=..0.3] run summon area_effect_cloud ~ ~ ~ {CustomNameVisible:1b,Particle:"block",Radius:0f,Duration:99,CustomName:"{\"text\":\"Empty\",\"color\":\"white\"}"}
-execute at @s if entity @s[tag=hasWater] if entity @a[distance=..10] positioned ~ ~.4 ~ unless entity @e[type=area_effect_cloud,distance=..0.3] run summon area_effect_cloud ~ ~ ~ {CustomNameVisible:1b,Particle:"block",Radius:0f,Duration:99,CustomName:"{\"text\":\"Water\",\"color\":\"blue\"}"}
-execute at @s if entity @s[tag=hasLava] if entity @a[distance=..10] positioned ~ ~.4 ~ unless entity @e[type=area_effect_cloud,distance=..0.3] run summon area_effect_cloud ~ ~ ~ {CustomNameVisible:1b,Particle:"block",Radius:0f,Duration:99,CustomName:"{\"text\":\"Lava\",\"color\":\"gold\"}"}
-execute at @s if entity @s[tag=hasMilk] if entity @a[distance=..10] positioned ~ ~.4 ~ unless entity @e[type=area_effect_cloud,distance=..0.3] run summon area_effect_cloud ~ ~ ~ {CustomNameVisible:1b,Particle:"block",Radius:0f,Duration:99,CustomName:"{\"text\":\"Milk\",\"color\":\"gray\"}"}
-execute at @s if entity @s[tag=hasDraBre] if entity @a[distance=..10] positioned ~ ~.4 ~ unless entity @e[type=area_effect_cloud,distance=..0.3] run summon area_effect_cloud ~ ~ ~ {CustomNameVisible:1b,Particle:"block",Radius:0f,Duration:99,CustomName:"{\"text\":\"Dragon's Breath\",\"color\":\"light_purple\"}"}
-execute at @s if entity @s[tag=hasXP] if entity @a[distance=..10] positioned ~ ~.4 ~ unless entity @e[type=area_effect_cloud,distance=..0.3] run summon area_effect_cloud ~ ~ ~ {CustomNameVisible:1b,Particle:"block",Radius:0f,Duration:99,CustomName:"{\"text\":\"Experience\",\"color\":\"green\"}"}
-execute at @s if entity @s[tag=hasLev] if entity @a[distance=..10] positioned ~ ~.4 ~ unless entity @e[type=area_effect_cloud,distance=..0.3] run summon area_effect_cloud ~ ~ ~ {CustomNameVisible:1b,Particle:"block",Radius:0f,Duration:99,CustomName:"{\"text\":\"Levitation\",\"color\":\"aqua\"}"}
+execute as @s at @s run function #tanks:tanks_names
+#execute at @s if entity @s[tag=hasWater] if entity @a[distance=..10] positioned ~ ~.4 ~ unless entity @e[type=area_effect_cloud,distance=..0.3] run summon area_effect_cloud ~ ~ ~ {CustomNameVisible:1b,Particle:"block",Radius:0f,Duration:99,CustomName:"{\"text\":\"Water\",\"color\":\"blue\"}"}
+#execute at @s if entity @s[tag=hasLava] if entity @a[distance=..10] positioned ~ ~.4 ~ unless entity @e[type=area_effect_cloud,distance=..0.3] run summon area_effect_cloud ~ ~ ~ {CustomNameVisible:1b,Particle:"block",Radius:0f,Duration:99,CustomName:"{\"text\":\"Lava\",\"color\":\"gold\"}"}
+#execute at @s if entity @s[tag=hasMilk] if entity @a[distance=..10] positioned ~ ~.4 ~ unless entity @e[type=area_effect_cloud,distance=..0.3] run summon area_effect_cloud ~ ~ ~ {CustomNameVisible:1b,Particle:"block",Radius:0f,Duration:99,CustomName:"{\"text\":\"Milk\",\"color\":\"gray\"}"}
+#execute at @s if entity @s[tag=hasDraBre] if entity @a[distance=..10] positioned ~ ~.4 ~ unless entity @e[type=area_effect_cloud,distance=..0.3] run summon area_effect_cloud ~ ~ ~ {CustomNameVisible:1b,Particle:"block",Radius:0f,Duration:99,CustomName:"{\"text\":\"Dragon's Breath\",\"color\":\"light_purple\"}"}
+#execute at @s if entity @s[tag=hasXP] if entity @a[distance=..10] positioned ~ ~.4 ~ unless entity @e[type=area_effect_cloud,distance=..0.3] run summon area_effect_cloud ~ ~ ~ {CustomNameVisible:1b,Particle:"block",Radius:0f,Duration:99,CustomName:"{\"text\":\"Experience\",\"color\":\"green\"}"}
+#execute at @s if entity @s[tag=hasLev] if entity @a[distance=..10] positioned ~ ~.4 ~ unless entity @e[type=area_effect_cloud,distance=..0.3] run summon area_effect_cloud ~ ~ ~ {CustomNameVisible:1b,Particle:"block",Radius:0f,Duration:99,CustomName:"{\"text\":\"Levitation\",\"color\":\"aqua\"}"}
 
 #Head Change
 execute as @s[tag=!filled] run data merge entity @s {ArmorItems:[{},{},{},{id:"minecraft:glass",Count:1b}]}
