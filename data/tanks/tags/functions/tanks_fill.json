@@ -5,6 +5,7 @@
        "tanks:filling/lava",
        "tanks:filling/levitation",
        "tanks:filling/milk",
-       "tanks:filling/xp"
+       "tanks:filling/xp",
+       "tanks:filling/mush_stew"
    ]
 }

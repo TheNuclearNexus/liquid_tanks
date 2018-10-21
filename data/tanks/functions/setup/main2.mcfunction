@@ -19,6 +19,7 @@ execute if score @s ES_stored matches ..0 run scoreboard players reset @s ES_tem
 execute if score @s ES_ID matches 1 run scoreboard players set @s ES_maxAmnt 21
 execute if score @s ES_ID matches 2..5 run scoreboard players set @s ES_maxAmnt 20
 execute if score @s ES_ID matches 6 run scoreboard players set @s ES_maxAmnt 10000
+execute if score @s ES_ID matches 7..9 run scoreboard players set @s ES_maxAmnt 20
 
 #functions
 execute as @s at @s run function #tanks:tanks_fill

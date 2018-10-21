@@ -10,5 +10,5 @@ execute positioned ~ ~-1.6 ~ if entity @a[distance=..0.5] if score @s ES_stored 
 execute positioned ~ ~-1.6 ~ if entity @a[distance=..0.5] if score @s ES_stored matches 2.. unless score @s ES_temp matches 1.. run scoreboard players remove @s ES_stored 2
 execute positioned ~ ~-1.6 ~ if entity @a[distance=..0.5] if score @s ES_stored matches 2.. unless score @s ES_temp matches 1.. run scoreboard players set @s ES_temp 100
 
-execute if score @s[tag=hasMilk] ES_temp matches 1.. run scoreboard players remove @s ES_temp 1
-execute if score @s[tag=hasDraMilk] ES_temp matches 0 run scoreboard players reset @s ES_temp
+execute if score @s[scores={ES_ID=5}] ES_temp matches 1.. run scoreboard players remove @s ES_temp 1
+execute if score @s[scores={ES_ID=5}] ES_temp matches 0 run scoreboard players reset @s ES_temp
