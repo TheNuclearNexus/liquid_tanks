@@ -26,7 +26,7 @@ execute as @a at @s if score @e[scores={ES_ID=1..},sort=nearest,distance=..3,tag
 execute as @a at @s if score @e[scores={ES_ID=1..},sort=nearest,distance=..3,tag=ES_tank,limit=1] ES_stored matches 19 run title @s actionbar ["",{"text":"[","color":"gray"},{"text":"|||||||||||||||||||","color":"gold","bold":true},{"text":"|","color":"dark_gray","bold":true},{"text":"]","color":"gray","bold":false}]
 execute as @a at @s if score @e[scores={ES_ID=1..},sort=nearest,distance=..3,tag=ES_tank,limit=1] ES_stored matches 20.. run title @s actionbar ["",{"text":"[","color":"gray"},{"text":"||||||||||||||||||||","color":"gold","bold":true},{"text":"","color":"dark_gray","bold":true},{"text":"]","color":"gray","bold":false}]
 
-execute as @a at @s if entity @e[tag=ES_tank,distance=..3,tag=hasXP] run title @s actionbar ["",{"text":"<","color":"gray"},{"score":{"name":"@e[tag=filled,tag=hasXP,sort=nearest,distance=..3,tag=ES_tank,limit=1]","objective":"ES_stored"},"color":"green","bold":true},{"text":"> XP Points","color":"gray"}]
+execute as @a at @s positioned ~ ~-1 ~ if entity @e[tag=ES_tank,distance=..1,scores={ES_ID=6}] run title @s actionbar ["",{"text":"<","color":"gray"},{"score":{"name":"@e[scores={ES_ID=6},sort=nearest,distance=..3,tag=ES_tank,limit=1]","objective":"ES_stored"},"color":"green","bold":true},{"text":"> XP Points","color":"gray"}]
 #sneak detect
 scoreboard players set @a ES_sneakTime 0
 #ES Timer
