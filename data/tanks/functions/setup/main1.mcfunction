@@ -30,3 +30,6 @@ execute as @a if score @s ES_temp matches 1.. run scoreboard players remove @s E
 execute as @a if score @s ES_temp matches 0 run scoreboard players reset @s ES_temp
 
 execute as @a[scores={ES_placeHead=1..}] at @s run function tanks:placing/place_head
+
+execute as @e[type=item,nbt={Item:{tag:{SkullOwner:{Id:"45c44468-2286-4bee-8713-f83df63a0446"}}}}] unless entity @s[nbt={Item:{tag:{display:{Name:"{\"text\":\"Bucket of Clouds\",\"color\":\"aqua\",\"italic\":false}",Lore:["§r§fFloats like magic..."]}}}}] run data merge entity @s {Item:{tag:{display:{Name:"{\"text\":\"Bucket of Clouds\",\"color\":\"aqua\",\"italic\":false}",Lore:["§r§fFloats like magic..."]}}}}
+execute as @e[type=item,nbt={Item:{tag:{SkullOwner:{Id:"45c44468-2286-4bee-8713-f83df63a0446"}}}}] at @s if score XPTimer ES_temp matches 19 run particle end_rod ~ ~0.2 ~ 0.05 0.05 0.05 0.01 1 normal @a[distance=..5]

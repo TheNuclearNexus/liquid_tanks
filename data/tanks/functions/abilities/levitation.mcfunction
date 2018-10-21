@@ -5,7 +5,7 @@ execute as @s[tag=fillCloudBot] run scoreboard players remove @s ES_stored 1
 execute as @s[tag=fillCloudBot] run tag @s remove fillCloudBot
 
 execute if score @s ES_stored matches 2.. if entity @e[distance=..1,tag=!emptied,type=item,nbt={Item:{id:"minecraft:bucket",Count:1b}}] run tag @s add fillCloudBuck
-execute as @s[tag=fillCloudBuck] run data merge entity @e[limit=1,distance=..1,tag=!filled,type=item,nbt={Item:{id:"minecraft:bucket",Count:1b}}] {Tags:["filled"],Item:{id:"minecraft:player_head",tag:{BOS:1b,display:{Name:"{\"text\":\"Bucket of Clouds\",\"color\":\"aqua\",\"italic\":false}",Lore:["§r§fFloats like magic..."]},SkullOwner:{Id:"45c44468-2286-4bee-8713-f83df63a0446",Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzk3Y2ViNjgxNjczN2VjMmM2MjlkOTMxODk5YTk2Nzk0OWE4N2YxYmNhM2Y1NWNkYWY3NTBlZGY2MDZkNGEyOCJ9fX0="}]}}}}}
+execute as @s[tag=fillCloudBuck] run data merge entity @e[limit=1,distance=..1,tag=!filled,type=item,nbt={Item:{id:"minecraft:bucket",Count:1b}}] {Tags:["filled"],Item:{id:"minecraft:player_head",tag:{display:{Name:"{\"text\":\"Bucket of Clouds\",\"color\":\"aqua\",\"italic\":false}",Lore:["§r§fFloats like magic..."]},SkullOwner:{Id:"45c44468-2286-4bee-8713-f83df63a0446",Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzk3Y2ViNjgxNjczN2VjMmM2MjlkOTMxODk5YTk2Nzk0OWE4N2YxYmNhM2Y1NWNkYWY3NTBlZGY2MDZkNGEyOCJ9fX0="}]}}}}}
 execute as @s[tag=fillCloudBuck] run scoreboard players remove @s ES_stored 2
 execute as @s[tag=fillCloudBuck] run tag @s remove fillCloudBuck
 
