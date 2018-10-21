@@ -1,3 +1,4 @@
+#Levitation
 execute if score @s ES_stored matches 1.. if entity @e[distance=..1,tag=!emptied,type=item,nbt={Item:{id:"minecraft:glass_bottle",Count:1b}}] run tag @s add fillCloudBot
 execute as @s[tag=fillCloudBot] run data merge entity @e[limit=1,distance=..1,tag=!filled,type=item,nbt={Item:{id:"minecraft:glass_bottle",Count:1b}}] {Tags:["filled"],Item:{id:"minecraft:potion",tag:{display:{Name:"{\"text\":\"Potion of Clouds\",\"color\":\"white\",\"italic\":false}"},CustomPotionEffects:[{Id:25b,Amplifier:0b,Duration:200,ShowParticles:1b}],CustomPotionColor:13431807}}}
 execute as @s[tag=fillCloudBot] run scoreboard players remove @s ES_stored 1
