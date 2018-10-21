@@ -1,9 +1,5 @@
 {
    "values":[
-       "tanks:abilities/water",
-       "tanks:abilities/dragon_breath",
-       "tanks:abilities/lava",
-       "tanks:abilities/levitation",
-       "tanks:abilities/milk"
+       "tanks:abilities"
    ]
 }
