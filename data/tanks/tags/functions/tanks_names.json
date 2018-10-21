@@ -1,10 +1,10 @@
 {
    "values":[
-       "tanks:filling/water",
-       "tanks:filling/lava",
-       "tanks:filling/dragon_breath",
-       "tanks:filling/milk",
-       "tanks:filling/levitation",
-       "tanks:filling/xp"
+       "tanks:names/water",
+       "tanks:names/lava",
+       "tanks:names/dragon_breath",
+       "tanks:names/milk",
+       "tanks:names/levitation",
+       "tanks:names/xp"
    ]
 }
