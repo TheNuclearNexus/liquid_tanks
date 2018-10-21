@@ -6,6 +6,8 @@
        "tanks:filling/levitation",
        "tanks:filling/milk",
        "tanks:filling/xp",
-       "tanks:filling/mush_stew"
+       "tanks:filling/mush_stew",
+       "tanks:filling/rabbit_stew",
+       "tanks:filling/beet_soup"
    ]
 }

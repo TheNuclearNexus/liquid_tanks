@@ -1,0 +1,3 @@
+execute if score @s ES_ID matches 0 unless score @s ES_stored matches 19.. if entity @e[distance=..1,tag=!filled,type=item,nbt={Item:{id:"minecraft:beetroot_soup",Count:1b}}] run scoreboard players set @s ES_ID 9
+execute if score @s ES_ID matches 9 unless score @s ES_stored matches 19.. if entity @e[distance=..1,tag=!filled,type=item,nbt={Item:{id:"minecraft:beetroot_soup",Count:1b}}] run scoreboard players add @s ES_stored 2
+execute if score @s ES_ID matches 9 unless score @s ES_stored matches 19.. if entity @e[distance=..1,tag=!filled,type=item,nbt={Item:{id:"minecraft:beetroot_soup",Count:1b}}] run data merge entity @e[limit=1,distance=..1,tag=!filled,type=item,nbt={Item:{id:"minecraft:beetroot_soup",Count:1b}}] {Tags:["emptied"],Item:{id:"minecraft:bowl"}}

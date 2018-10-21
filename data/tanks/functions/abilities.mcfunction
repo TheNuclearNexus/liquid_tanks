@@ -5,3 +5,5 @@ execute if score @s ES_ID matches 4 run function tanks:abilities/levitation
 execute if score @s ES_ID matches 5 run function tanks:abilities/milk
 execute if score @s ES_ID matches 6 run function tanks:abilities/xp
 execute if score @s ES_ID matches 7 run function tanks:abilities/mush_stew
+execute if score @s ES_ID matches 8 run function tanks:abilities/rabbit_stew
+execute if score @s ES_ID matches 9 run function tanks:abilities/beet_soup
