@@ -37,12 +37,4 @@ execute as @s[tag=hasDraBre] run data merge entity @s {ArmorItems:[{},{},{},{id:
 execute as @s[tag=hasXP] run data merge entity @s {ArmorItems:[{},{},{},{id:"minecraft:player_head",Count:1b,tag:{SkullOwner:{Id:"4a34f0ad-7cc3-4260-b4a9-1201cf4c2a83",Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTEwNzU0NjMzNGMyZjg3OWQzNGEwYTE5ZjIzMWQ3ZjU5YjU0MmM3MjJmYTViY2I2NGNkNDkwNDM2NDA1ZGZmOCJ9fX0="}]}}}}]}
 execute as @s[tag=hasLev] run data merge entity @s {ArmorItems:[{},{},{},{id:"minecraft:player_head",Count:1b,tag:{SkullOwner:{Id:"b2fa08e4-918e-4c3e-925e-5830fa96ca53",Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2I2ZGI5ODBhNTI0OTYwOTdkZmE4ZDU3ZGZiOTlkOGIxMjAxMTljNzExMzgzNThhNGRhMjliZWYwNmExZDZjMSJ9fX0="}]}}}}]}
 
-#Particles
-execute at @s if entity @s[tag=hasWater] if score XPTimer ES_temp matches 19..20 run particle dripping_water ~ ~1.1 ~ 0.1 0 0.1 0.1 3 normal @a[distance=..5]
-execute at @s if entity @s[tag=hasLava] if score XPTimer ES_temp matches 19..20 run particle lava ~ ~1.1 ~ 0.1 0 0.1 0.1 1 normal @a[distance=..5]
-execute at @s if entity @s[tag=hasMilk] if score XPTimer ES_temp matches 19..20 run particle block white_concrete ~ ~1.1 ~ 0 0 0 0.1 3 normal @a[distance=..5]
-execute at @s if entity @s[tag=hasXP] if score XPTimer ES_temp matches 19..20 run particle block lime_glazed_terracotta ~ ~1.1 ~ 0 0 0 0.1 3 normal @a[distance=..5]
-execute at @s if entity @s[tag=hasLev] if score XPTimer ES_temp matches 19..20 run particle end_rod ~ ~1.1 ~ 0 0 0 0.1 3 normal @a[distance=..5]
-execute at @s if entity @s[tag=hasDraBre] if score XPTimer ES_temp matches 19..20 run particle witch ~ ~.9 ~ 0 0 0 0.1 3 normal @a[distance=..5]
-execute at @s if entity @s[tag=hasDraBre] if score XPTimer ES_temp matches 10..11 if score @s ES_temp matches 51..200 run particle witch ~ ~1 ~ 0 0 0 0.1 10 normal @a[distance=..5]
-execute at @s if entity @s[tag=hasDraBre] if score XPTimer ES_temp matches 11..20 if score @s ES_temp matches 51..200 run particle witch ~ ~1 ~ 0 0 0 0.1 10 normal @a[distance=..5]
+execute as @s at @s if score XPTimer ES_temp matches 19..20  run function #tanks:tanks_particles
