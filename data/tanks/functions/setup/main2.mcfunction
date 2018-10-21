@@ -11,22 +11,8 @@ execute at @s if entity @s[tag=hasXP] if block ~ ~ ~ air store result entity @e[
 execute at @s if block ~ ~ ~ air run kill @s
 
 #Tagging
-execute if score @s ES_stored matches ..0 run tag @s remove filled
-execute if score @s ES_stored matches ..0 if entity @s[tag=hasWater] run tag @s remove ES_FC_T
-execute if score @s ES_stored matches ..0 if entity @s[tag=hasWater] run tag @s remove ES_FC_F
-execute at @s if score @s ES_stored matches ..0 if entity @s[tag=hasWater] run setblock ~ ~ ~ hopper[enabled=true]{TransferCooldown:1,CustomName:"{\"italic\":false,\"color\":\"aqua\",\"text\":\"Liquid Tank\"}"}
-execute if score @s ES_stored matches ..0 run tag @s remove hasWater
-execute if score @s ES_stored matches ..0 run tag @s remove hasLava
-execute if score @s ES_stored matches ..0 run tag @s remove hasMilk
-execute if score @s ES_stored matches ..0 if entity @s[tag=hasDraBre] run tag @s remove ES_RN_T
-execute if score @s ES_stored matches ..0 if entity @s[tag=hasDraBre] run tag @s remove ES_RN_F
-execute at @s if score @s ES_stored matches ..0 if entity @s[tag=hasDraBre] run setblock ~ ~ ~ hopper[enabled=true]{TransferCooldown:1,CustomName:"{\"italic\":false,\"color\":\"aqua\",\"text\":\"Liquid Tank\"}"}
-execute if score @s ES_stored matches ..0 if entity @s[tag=hasXP] run tag @s remove ES_CM_T
-execute if score @s ES_stored matches ..0 if entity @s[tag=hasXP] run tag @s remove ES_CM_F
-execute at @s if score @s ES_stored matches ..0 if entity @s[tag=hasXP] run setblock ~ ~ ~ hopper[enabled=true]{TransferCooldown:1,CustomName:"{\"italic\":false,\"color\":\"aqua\",\"text\":\"Liquid Tank\"}"}
-execute if score @s ES_stored matches ..0 run tag @s remove hasDraBre
-execute if score @s ES_stored matches ..0 run tag @s remove hasXP
-execute if score @s ES_stored matches ..0 run tag @s remove hasLev
+execute as @s[scores={ES_stored=..0}] run function #tanks:tanks_when_empty
+execute as @s[scores={ES_stored=..0}] run scoreboard players set @s ES_ID 0
 execute if score @s ES_stored matches ..0 run scoreboard players reset @s ES_temp
 
 #functions
@@ -43,7 +29,7 @@ execute as @s at @s if entity @a[distance=..10] positioned ~ ~.4 ~ unless entity
 #execute at @s if entity @s[tag=hasLev] if entity @a[distance=..10] positioned ~ ~.4 ~ unless entity @e[type=area_effect_cloud,distance=..0.3] run summon area_effect_cloud ~ ~ ~ {CustomNameVisible:1b,Particle:"block",Radius:0f,Duration:99,CustomName:"{\"text\":\"Levitation\",\"color\":\"aqua\"}"}
 
 #Head Change
-execute as @s[tag=!filled] run data merge entity @s {ArmorItems:[{},{},{},{id:"minecraft:glass",Count:1b}]}
+execute as @s[scores={ES_ID=0}] run data merge entity @s {ArmorItems:[{},{},{},{id:"minecraft:glass",Count:1b}]}
 execute as @s at @s run function #tanks:tanks_heads
 execute as @s[tag=hasLava] run data merge entity @s {ArmorItems:[{},{},{},{id:"minecraft:player_head",Count:1b,tag:{SkullOwner:{Id:"3a6df1ec-1eaa-4006-9954-b3ae78e3f510",Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmVjYTg3ODA5Y2E2MWI4YWE4ZGY4ZGM3YTM3MGFjMDEwMTFiMzA3YWE2YzY5NDkyNjU3ZGJmMGUwZGZlNzFiMyJ9fX0="}]}}}}]}
 execute as @s[tag=hasMilk] run data merge entity @s {ArmorItems:[{},{},{},{id:"minecraft:player_head",Count:1b,tag:{SkullOwner:{Id:"f89da645-d752-4b67-a377-a7deb698e615",Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjM5ZTkzZTZmOTQwYjY1ZTI2MjM1ZGFhZDQ0NTVhYmQ1OTg5NThiZDQ1NmUwMWVjZDQxMmFkNzdlZWNiZjIxYyJ9fX0="}]}}}}]}
