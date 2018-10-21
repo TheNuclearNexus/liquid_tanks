@@ -6,9 +6,9 @@ execute if entity @s[scores={ES_ID=6},tag=depositXP] run scoreboard players add 
 execute if entity @s[scores={ES_ID=6},tag=depositXP] run particle block lime_glazed_terracotta ~ ~.3 ~ 0.5 0 0.5 0 10 normal
 execute if entity @s[scores={ES_ID=6},tag=depositXP] if score XPTimer ES_temp matches 19.. if score XPSound ES_temp matches 1..5 run playsound minecraft:entity.experience_orb.pickup master @a[distance=..5] ~ ~ ~ 9 2
 execute if entity @s[scores={ES_ID=6},tag=depositXP] if score XPTimer ES_temp matches 19.. if score XPSound ES_temp matches 6..10 run playsound minecraft:entity.experience_orb.pickup master @a[distance=..5] ~ ~ ~ 9 1.6
-execute if entity @s[scores={ES_ID=6},tag=depositXP] if score XPTimer ES_temp matches 19.. if score XPSound ES_temp matches 11..15 run playsound minecraft:entity.experience_orb.pickup master @a[distance=..5] ~ ~ ~ 9 1
-execute if entity @s[scores={ES_ID=6},tag=depositXP] if score XPTimer ES_temp matches 19.. if score XPSound ES_temp matches 16..20 run playsound minecraft:entity.experience_orb.pickup master @a[distance=..5] ~ ~ ~ 9 0.6
-execute if entity @s[scores={ES_ID=6},tag=depositXP] if score XPTimer ES_temp matches 19.. if score XPSound ES_temp matches 21..25 run playsound minecraft:entity.experience_orb.pickup master @a[distance=..5] ~ ~ ~ 9 0
+#execute if entity @s[scores={ES_ID=6},tag=depositXP] if score XPTimer ES_temp matches 19.. if score XPSound ES_temp matches 11..15 run playsound minecraft:entity.experience_orb.pickup master @a[distance=..5] ~ ~ ~ 9 1
+#execute if entity @s[scores={ES_ID=6},tag=depositXP] if score XPTimer ES_temp matches 19.. if score XPSound ES_temp matches 16..20 run playsound minecraft:entity.experience_orb.pickup master @a[distance=..5] ~ ~ ~ 9 0.6
+#execute if entity @s[scores={ES_ID=6},tag=depositXP] if score XPTimer ES_temp matches 19.. if score XPSound ES_temp matches 21..25 run playsound minecraft:entity.experience_orb.pickup master @a[distance=..5] ~ ~ ~ 9 0
 execute if entity @s[scores={ES_ID=6},tag=depositXP] run xp add @a[distance=..0.7,limit=1,sort=nearest] -1
 execute if entity @s[scores={ES_ID=6},tag=depositXP] run tag @s remove depositXP
 execute unless score @s ES_stored matches 10000.. if entity @e[type=experience_orb,distance=..3,tag=!return] run scoreboard players add @s ES_stored 1

@@ -4,9 +4,9 @@ execute if entity @s[tag=withdrawXP] positioned ~ ~-1.6 ~ if entity @a[distance=
 execute if entity @s[tag=withdrawXP] run particle block lime_glazed_terracotta ~ ~.3 ~ 0.5 0 0.5 0 10 normal
 execute if entity @s[tag=withdrawXP] if score XPTimer ES_temp matches 19.. if score XPSound ES_temp matches 1..5 run playsound minecraft:entity.experience_orb.pickup master @a[distance=..5] ~ ~ ~ 9 2
 execute if entity @s[tag=withdrawXP] if score XPTimer ES_temp matches 19.. if score XPSound ES_temp matches 6..10 run playsound minecraft:entity.experience_orb.pickup master @a[distance=..5] ~ ~ ~ 9 1.6
-execute if entity @s[tag=withdrawXP] if score XPTimer ES_temp matches 19.. if score XPSound ES_temp matches 11..15 run playsound minecraft:entity.experience_orb.pickup master @a[distance=..5] ~ ~ ~ 9 1
-execute if entity @s[tag=withdrawXP] if score XPTimer ES_temp matches 19.. if score XPSound ES_temp matches 16..20 run playsound minecraft:entity.experience_orb.pickup master @a[distance=..5] ~ ~ ~ 9 0.6
-execute if entity @s[tag=withdrawXP] if score XPTimer ES_temp matches 19.. if score XPSound ES_temp matches 21..25 run playsound minecraft:entity.experience_orb.pickup master @a[distance=..5] ~ ~ ~ 9 0
+#execute if entity @s[tag=withdrawXP] if score XPTimer ES_temp matches 19.. if score XPSound ES_temp matches 11..15 run playsound minecraft:entity.experience_orb.pickup master @a[distance=..5] ~ ~ ~ 9 1
+#execute if entity @s[tag=withdrawXP] if score XPTimer ES_temp matches 19.. if score XPSound ES_temp matches 16..20 run playsound minecraft:entity.experience_orb.pickup master @a[distance=..5] ~ ~ ~ 9 0.6
+#execute if entity @s[tag=withdrawXP] if score XPTimer ES_temp matches 19.. if score XPSound ES_temp matches 21..25 run playsound minecraft:entity.experience_orb.pickup master @a[distance=..5] ~ ~ ~ 9 0
 execute if entity @s[tag=withdrawXP] positioned ~ ~-1.6 ~ if entity @a[distance=..0.5,limit=1,sort=nearest] run tag @s remove withdrawXP
 
 execute unless block ~ ~ ~ hopper{Items:[{Slot:2b}]} if entity @s[scores={ES_ID=6},tag=ES_CM_F,tag=!ES_CM_T] run tag @s add swapT
