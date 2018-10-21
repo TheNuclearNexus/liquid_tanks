@@ -2,6 +2,7 @@
    "values":[
        "tanks:filling/water",
        "tanks:filling/dragon_breath",
-       "tanks:filling/lava"
+       "tanks:filling/lava",
+       "tanks:filling/levitation"
    ]
 }
