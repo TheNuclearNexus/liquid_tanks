@@ -10,7 +10,7 @@ execute as @s[tag=fillCloudBuck] run scoreboard players remove @s ES_stored 2
 execute as @s[tag=fillCloudBuck] run tag @s remove fillCloudBuck
 
 execute positioned ~ ~.2 ~ if entity @a[distance=..0.5] if score @s ES_stored matches 1.. unless score @s ES_temp matches 1.. run tag @s add applyLev
-execute positioned ~ ~.2 ~ if entity @s[tag=applyLev] run effect give @a[distance=..0.5,limit=1,sort=nearest] levitation 5 0 false
+execute positioned ~ ~.2 ~ if entity @s[tag=applyLev] run effect give @a[distance=..0.5,limit=1,sort=nearest] levitation 10 0 false
 execute positioned ~ ~.2 ~ if entity @s[tag=applyLev] run tp @a[distance=..0.5,limit=1,sort=nearest] ~ ~1 ~
 execute positioned ~ ~.2 ~ if entity @s[tag=applyLev] run playsound minecraft:entity.generic.drink master @a[distance=..5]
 execute positioned ~ ~.2 ~ if entity @s[tag=applyLev] run particle minecraft:end_rod ~ ~-2 ~ 0.1 2 0.1 0 100 normal @a[distance=..5]

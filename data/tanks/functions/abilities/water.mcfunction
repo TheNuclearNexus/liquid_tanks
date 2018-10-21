@@ -1,6 +1,6 @@
 execute if score @s ES_ID matches 1 if score @s ES_stored matches 2.. if entity @e[distance=..1,tag=!emptied,type=item,nbt={Item:{id:"minecraft:bucket",Count:1b}}] run tag @s add fillWaterBuck
 execute as @s[tag=fillWaterBuck] run data merge entity @e[limit=1,distance=..1,tag=!filled,type=item,nbt={Item:{id:"minecraft:bucket",Count:1b}}] {Tags:["filled"],Item:{id:"minecraft:water_bucket"}}
-execute as @s[tag=fillWaterBuck] run scoreboard players remove @s ES_stored 2
+execute as @s[tag=fillWaterBuck] run scoreboard players remove @s ES_stored 3
 execute as @s[tag=fillWaterBuck] run tag @s remove fillWaterBuck
 
 execute if score @s ES_ID matches 1 if score @s ES_stored matches 1.. if entity @e[distance=..1,tag=!emptied,type=item,nbt={Item:{id:"minecraft:glass_bottle",Count:1b}}] run tag @s add fillWaterBot

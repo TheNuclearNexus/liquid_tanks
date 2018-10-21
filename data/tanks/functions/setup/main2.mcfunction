@@ -13,7 +13,12 @@ execute at @s if block ~ ~ ~ air run kill @s
 #Tagging
 execute as @s[scores={ES_stored=..0}] run function #tanks:tanks_when_empty
 execute as @s[scores={ES_stored=..0}] run scoreboard players set @s ES_ID 0
+execute as @s[scores={ES_stored=..0}] run scoreboard players set @s ES_maxAmnt 0
 execute if score @s ES_stored matches ..0 run scoreboard players reset @s ES_temp
+
+execute if score @s ES_ID matches 1 run scoreboard players set @s ES_maxAmnt 21
+execute if score @s ES_ID matches 2..5 run scoreboard players set @s ES_maxAmnt 20
+execute if score @s ES_ID matches 6 run scoreboard players set @s ES_maxAmnt 10000
 
 #functions
 execute as @s at @s run function #tanks:tanks_fill
