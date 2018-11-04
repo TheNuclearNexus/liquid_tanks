@@ -1,0 +1,26 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "Draconic Breath",
+            "color": "light_purple"
+        },
+        "description": {
+            "text": "Collect Dragon's Breath in a Liquid Tank",
+            "color": "dark_purple"
+        },
+        "icon": {
+            "item": "minecraft:chorus_plant"
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "parent": "tanks:root"
+}
