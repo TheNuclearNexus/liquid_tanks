@@ -1,0 +1,26 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "Cow Milker",
+            "color": "gray"
+        },
+        "description": {
+            "text": "Obtain milk from a cow and store its milk in an empty Liquid Tank",
+            "color": "white"
+        },
+        "icon": {
+            "item": "minecraft:milk_bucket"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "parent": "tanks:craft_liquidtank"
+}

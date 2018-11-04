@@ -1,0 +1,30 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "Gettin' Tankey",
+            "color": "aqua",
+            "italic": false
+        },
+        "description": {
+            "text": "Create a Liquid Tank",
+            "color": "blue"
+        },
+        "icon": {
+            "item": "minecraft:hopper"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "rewards": {
+        "experience": 10
+    },
+    "parent": "tanks:root"
+}
